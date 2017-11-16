@@ -1,13 +1,19 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-
     navigator: {
         flex: 1
     },
+    taskCheckbox: {
+      backgroundColor: 'transparent',
+      borderWidth: 3,
+      borderColor: 'blue',
+      width: 10,
+      height: 10,
+    },
     container: {
         flex: 1,
-        flexDirection: 'column',
+        flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'flex-start',
         padding: 10,
@@ -53,7 +59,17 @@ const styles = StyleSheet.create({
         height: 1,
         marginLeft: 0,
         marginRight: 0,
-    }
+    },
+    modalContainer: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    modalContent: {
+      height: 350,
+      width: 300,
+      backgroundColor: 'white',
+    },
 });
 
 export default styles;

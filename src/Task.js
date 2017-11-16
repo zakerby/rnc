@@ -7,17 +7,24 @@ import {
 class Task extends React.Component {
     constructor(){
         super();
+        this.handleCompleteTask = this.handleCompleteTask.bind(this);
     }
+
+    handleCompleteTask() {
+      const {item: {txt: itemName}, onPress} = this.props;
+      onPress(itemName);
+    }
+
     render() {
-        var item = this.props.item;
+      const {item} = this.props;
+      const {complete} = item;
         return (
             <View>
                 <TouchableHighlight
-                    onPress={this.props.onPress}
-                    onLongPress={this.props.onLongPress}>
+                    onPress={this.handleCompleteTask}>
                     <View style={styles.container}>
                         <Text
-                            style={[styles.txt, item.complete && styles.completed]}>
+                            style={[styles.txt, complete && styles.completed]}>
                             {item.txt}
                         </Text>
                     </View>
